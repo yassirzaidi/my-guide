@@ -1,11 +1,9 @@
 package com.example.myguideapp;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -25,17 +23,15 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends Activity implements LocationListener {
-    private Button button;
-    private TextView citytxt;
+    private Button mInfoBtn;
+    private TextView mCityTxt;
     protected LocationManager locationManager;
     private String cityName;
     private MapView mapView;
@@ -47,14 +43,16 @@ public class MainActivity extends Activity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button= (Button) findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener() {
+        mInfoBtn = (Button) findViewById(R.id.info_btn);
+        mInfoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+                openDetailActivity();
             }
         });
-        citytxt = (TextView) findViewById(R.id.citytxt);
+
+        mCityTxt = (TextView) findViewById(R.id.city_txt);
+
         if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 2021);
@@ -67,8 +65,8 @@ public class MainActivity extends Activity implements LocationListener {
 
 
     }
-    public void openActivity2(){
-        Intent intent = new Intent(this,Activity2.class);
+    public void openDetailActivity(){
+        Intent intent = new Intent(this, DetailActivity.class);
         startActivity(intent);
     }
 
@@ -88,7 +86,7 @@ public class MainActivity extends Activity implements LocationListener {
         try {
             cityName = getCityName(location.getLatitude(), location.getLongitude());
             Log.i("MQL" ,"<<<<<<<<<<City name : " + cityName);
-            citytxt.setText(cityName);
+            mCityTxt.setText(cityName);
             if(googleMap !=null){
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng( location.getLatitude(),location.getLongitude())));
             }
