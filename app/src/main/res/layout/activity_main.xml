@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<!--    <fragment
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:id="@+id/map_id"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" >
+    </fragment>-->
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+
+    <TextView
+        android:id="@+id/citytxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70px"
+        android:layout_marginTop="400dp"
+        android:drawableStart="@drawable/ic_location_on_black_24dp"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"
+        android:drawablePadding="10px"
+        android:fontFamily="sans-serif-medium"
+        android:text="City"
+        android:textColor="#161515"
+        android:textSize="90px"
+        />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="450px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="sans-serif-medium"
+        android:text="Reesayer"
+        android:textColor="#ffffff"
+        android:textSize="50px" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="450px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="480dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/button_border"
+        android:fontFamily="sans-serif-medium"
+        android:text="Voir Plus"
+        android:textColor="#ffffff"
+        android:textSize="50px" />
+
+
+</RelativeLayout>

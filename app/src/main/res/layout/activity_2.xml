@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fes"
+        android:layout_marginTop="-520px"/>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="123dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="70px"
+        android:layout_marginTop="270dp"
+
+        android:fontFamily="sans-serif-medium"
+        android:text="Fes"
+        android:textColor="#161515"
+        android:textSize="90px" />
+
+    <TextView
+        android:id="@+id/descr"
+        android:layout_width="384dp"
+        android:layout_height="349dp"
+        android:layout_below="@id/city"
+        android:layout_marginLeft="25px"
+        android:layout_marginTop="-14dp"
+        android:fontFamily="casual"
+        android:text="Fès est une ville du nord-est du Maroc souvent considérée comme la capitale culturelle du pays. Elle est principalement réputée pour la médina fortifiée de Fès El Bali, avec architecture mérinide médiévale, souks animés et atmosphère à l'ancienne.
+          La médina abrite des écoles religieuses telles que les médersas Bou Inania et Al Attarine datant du XIVe siècle, toutes deux décorées de panneaux de cèdre sculptés et de délicates mosaïques. "
+        android:textColor="#161515"
+        android:textSize="50px" />
+
+</RelativeLayout>
